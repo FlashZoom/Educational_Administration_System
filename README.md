@@ -29,6 +29,6 @@ Login page
    Course selection
     ![image]( https://github.com/FlashZoom/Educational_Administration_System/blob/master/Picture/couse%20selection.png)
     
-    
-    Teacher login
-     ![image](https://github.com/FlashZoom/Educational_Administration_System/blob/master/Picture/teacher%20login.png)
+   
+   Teacher login
+    ![image](https://github.com/FlashZoom/Educational_Administration_System/blob/master/Picture/teacher%20login.png)
