@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}选课情况{% endblock %}
+{% block css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet"/>{% endblock %}
+
+{% block content %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">课程信息</h3>
+      </div>
+      <div class="panel-body">
+          <table border="2">
+            <thead>
+                <th>课程号</th>
+                <th>课程名</th>
+                <th>学时</th>
+                <th>任教老师</th>
+                <th>考试类型</th>
+                <th>考试成绩</th>
+            </thead>
+            <tbody>
+                {% for line in data %}
+                    <tr>
+                        <td>{{ line.id}}</td>
+                        <td>{{ line.name }}</td>
+                        <td>{{ line.studyhour }}</td>
+                        <td>{{ line.teacher }}</td>
+                        <td>{{ line.teststy }}</td>
+                        <td>{{ line.score }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </div>
+{% endblock %}

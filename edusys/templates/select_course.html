@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}选课{% endblock %}
+{% block css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet"/>{% endblock %}
+
+{% block content %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">课程信息</h3>
+      </div>
+      <div class="panel-body">
+          <table border="2">
+            <thead>
+                <th>课程号</th>
+                <th>课程名</th>
+                <th>学时</th>
+                <th>学分</th>
+                <th>考试类型</th>
+                <th> 选择</th>
+            </thead>
+            <tbody>
+                {% for line in data %}
+                    <tr>
+                        <td>{{ line.id}}</td>
+                        <td>{{ line.name }}</td>
+                        <td>{{ line.studyhour }}</td>
+                        <td>{{ line.credit }}</td>
+                        <td>{{ line.teststy }}</td>
+                        <td>
+                            <form action="/add_course/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="m" />
+                            <input type="button" value="添加" onclick="this.form.m.value={{line.id}};" />
+                            <button type="submit" class="btn btn-primary pull-right">提交</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </div>
+{% endblock %}

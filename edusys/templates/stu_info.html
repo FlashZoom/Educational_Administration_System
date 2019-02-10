@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}个人信息{% endblock %}
+{% block css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet"/>{% endblock %}
+
+{% block content %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">学生信息</h3>
+      </div>
+      <div class="panel-body">
+          <table border="1">
+            <thead>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>生日</th>
+                <th>政治面貌</th>
+                <th>民族</th>
+                <th>年级</th>
+                <th>导师姓名</th>
+                <th>电话</th>
+            </thead>
+            <tbody>
+                {% for line in data %}
+                    <tr>
+                        <td>{{ line.id}}</td>
+                        <td>{{ line.name }}</td>
+                        <td>{{ line.sex }}</td>
+                        <td>{{ line.birthday }}</td>
+                        <td>{{ line.policate }}</td>
+                        <td>{{ line.nation }}</td>
+                        <td>{{ line.grade }}</td>
+                        <td>{{ line.tutor }}</td>
+                        <td>{{ line.tel }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </div>
+{% endblock %}

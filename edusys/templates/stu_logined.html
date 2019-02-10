@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}已登录{% endblock %}
+{% block css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet"/>{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+          <h1>{{ request.session.uesr_name }}您好</h1>
+
+          <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+            <p><a class="btn btn-primary btn-lg" href="/stu_info/" role="button">个人信息</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/stu_course/" role="button">选课情况</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/select_course/" role="button">选课</a></p>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}
